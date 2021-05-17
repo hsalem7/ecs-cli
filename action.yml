@@ -1,0 +1,19 @@
+name: 'Ecs cli action'
+description: 'Ecs cli action'
+inputs:
+  cluster:
+    description: 'Cluster name'
+    required: true
+  region:
+    description: 'Region name'
+    required: true
+  project:
+    description: 'Project name'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.cluster }}
+    - ${{ inputs.region }}
+    - ${{ inputs.project }}
