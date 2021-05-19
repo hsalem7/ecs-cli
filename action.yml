@@ -12,7 +12,7 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'hassansalem/ecs-cli:v1'
+  image: 'docker://hassansalem/ecs-cli:v1'
   args:
     - ${{ inputs.cluster }}
     - ${{ inputs.region }}
