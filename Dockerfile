@@ -11,7 +11,9 @@ RUN chmod +x entrypoint.sh
 
 RUN curl -Lo /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest
 
-RUN gpg --keyserver hkp://keys.gnupg.net --recv BCE9D9A42D51784F
+COPY ./amazon-pgp-public-key ./amazon-pgp-public-key
+
+RUN gpg --import ./amazon-pgp-public-key
 
 RUN curl -Lo ecs-cli.asc https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest.asc
 
