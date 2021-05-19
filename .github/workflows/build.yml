@@ -1,9 +1,9 @@
-name: CI
+name: build-image
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
