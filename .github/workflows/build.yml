@@ -20,5 +20,5 @@ jobs:
 
       - name: Build and push images
         run: |
-          docker build --progress plain -f Dockerfile . -t v1
+          docker build --progress plain -f Dockerfile . -t hassansalem/ecs-cli:v1
           docker push hassansalem/ecs-cli:v1
